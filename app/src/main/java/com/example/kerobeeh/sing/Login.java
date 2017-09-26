@@ -26,8 +26,6 @@ public class Login extends Activity {
 
         txtname = (EditText) findViewById(R.id.txtName);
         txtpass = (EditText) findViewById(R.id.txtPass);
-        show = (Button)findViewById(R.id.buttonlist);
-        listView = (ListView)findViewById(R.id.list);
         btnlog = (Button)findViewById(R.id.btnlog);
         btnsin = (Button)findViewById(R.id.btnsin);
 
@@ -50,17 +48,15 @@ public class Login extends Activity {
     public void onClick(View view) {
         int id = view.getId();
         switch (id){
-            case R.id.buttonlist:
-                ShowData();
-                break;
+
             case R.id.btnlog:
                 boolean result=sql.ch(txtname.getText().toString(),txtpass.getText().toString());
 
                 if(result){
                     Toast.makeText(getApplicationContext(), "Login successful, redirecting to Home Page.", Toast.LENGTH_LONG).show();
-                   /*  Intent logintent = new Intent(Login.this,listview .class);
+                     Intent logintent = new Intent(Login.this,Listview.class);
                      startActivity(logintent);
-                     */
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid credentials, please try again.", Toast.LENGTH_LONG).show();
                 }

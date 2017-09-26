@@ -80,7 +80,7 @@ public class DB extends SQLiteOpenHelper {
      boolean ch(String Name, String pass) {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        String select = "select * from sing where name =? and password =?";
+        String select = "select * from sign where name =? and password =?";
 
         Cursor res = db.rawQuery(select,new String[]{Name,pass});
          if(res.moveToFirst())
